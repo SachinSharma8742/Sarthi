@@ -1,0 +1,427 @@
+
+
+        .sustainability-section {
+            padding: 120px 0;
+            position: relative;
+            background: linear-gradient(135deg, #F1F6F4 0%, #EDF4F0 100%);
+            overflow: hidden;
+        }
+
+        /* Background decorative elements */
+        .bg-decoration {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            pointer-events: none;
+            opacity: 0.03;
+        }
+
+        .leaf-pattern {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M50 10c20 0 40 20 40 40s-20 40-40 40c-20 0-40-20-40-40s20-40 40-40z" fill="%23264D3C"/></svg>') no-repeat center;
+            background-size: contain;
+            animation: float 20s infinite ease-in-out;
+        }
+
+        .leaf-1 { top: 10%; left: 5%; animation-delay: 0s; }
+        .leaf-2 { top: 20%; right: 10%; animation-delay: 5s; }
+        .leaf-3 { bottom: 30%; left: 8%; animation-delay: 10s; }
+        .leaf-4 { bottom: 10%; right: 5%; animation-delay: 15s; }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(5deg); }
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+            position: relative;
+            z-index: 10;
+        }
+
+        /* Section Header */
+        .section-header {
+            text-align: center;
+            margin-bottom: 80px;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 1s ease-out 0.3s forwards;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 52px;
+            font-weight: 500;
+            color: #264D3C;
+            margin-bottom: 30px;
+            letter-spacing: -0.5px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #264D3C, #7A9A8A, transparent);
+            border-radius: 2px;
+        }
+
+        .section-subtitle {
+            font-size: 18px;
+            font-weight: 400;
+            color: #555555;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        /* Sustainability Pillars */
+        .pillars-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 50px;
+            margin-bottom: 80px;
+        }
+
+        .pillar {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(38, 77, 60, 0.1);
+            border-radius: 20px;
+            padding: 50px 30px;
+            text-align: center;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            opacity: 0;
+            transform: translateY(50px);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pillar::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #264D3C, #7A9A8A);
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+
+        .pillar:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 60px rgba(38, 77, 60, 0.15);
+            background: rgba(255, 255, 255, 0.9);
+            border-color: rgba(38, 77, 60, 0.2);
+        }
+
+        .pillar:hover::before {
+            transform: scaleX(1);
+        }
+
+        .pillar.revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .pillar-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 30px;
+            background: linear-gradient(135deg, #264D3C, #7A9A8A);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            color: white;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pillar-icon::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .pillar:hover .pillar-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .pillar:hover .pillar-icon::before {
+            left: 100%;
+        }
+
+        .pillar-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            font-weight: 500;
+            color: #264D3C;
+            margin-bottom: 20px;
+            letter-spacing: -0.3px;
+        }
+
+        .pillar-description {
+            font-size: 16px;
+            color: #666666;
+            line-height: 1.7;
+            font-weight: 400;
+        }
+
+        /* Impact Stats */
+        .impact-stats {
+            background: rgba(38, 77, 60, 0.05);
+            border-radius: 20px;
+            padding: 60px 40px;
+            margin-bottom: 60px;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 1s ease-out 1.5s forwards;
+        }
+
+        .stats-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 32px;
+            font-weight: 500;
+            color: #264D3C;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .stat-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 48px;
+            font-weight: 600;
+            color: #264D3C;
+            line-height: 1;
+            margin-bottom: 10px;
+            opacity: 0;
+        }
+
+        .stat-label {
+            font-size: 16px;
+            color: #666666;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Certification Badges */
+        .certifications {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-bottom: 60px;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out 1.8s forwards;
+        }
+
+        .cert-badge {
+            background: white;
+            border: 2px solid rgba(38, 77, 60, 0.1);
+            border-radius: 15px;
+            padding: 20px 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .cert-badge:hover {
+            border-color: #264D3C;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(38, 77, 60, 0.15);
+        }
+
+        .cert-icon {
+            font-size: 24px;
+            margin-bottom: 8px;
+            color: #264D3C;
+        }
+
+        .cert-name {
+            font-size: 14px;
+            font-weight: 600;
+            color: #264D3C;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* CTA Section */
+        .cta-section5 {
+            text-align: center;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out 2.1s forwards;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 18px 36px;
+            background: linear-gradient(135deg, #264D3C 0%, #7A9A8A 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 16px;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            box-shadow: 0 8px 25px rgba(38, 77, 60, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(38, 77, 60, 0.4);
+        }
+
+        .cta-button:hover::before {
+            left: 100%;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes countUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .pillars-container {
+                gap: 40px;
+            }
+
+            .section-title {
+                font-size: 44px;
+            }
+
+            .container {
+                padding: 0 30px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .sustainability-section {
+                padding: 80px 0;
+            }
+
+            .pillars-container {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .certifications {
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+            }
+
+            .section-title {
+                font-size: 36px;
+            }
+
+            .section-subtitle {
+                font-size: 16px;
+            }
+
+            .pillar {
+                padding: 40px 25px;
+            }
+
+            .impact-stats {
+                padding: 40px 30px;
+            }
+
+            .stats-title {
+                font-size: 28px;
+            }
+
+            .stat-number {
+                font-size: 36px;
+            }
+
+            .container {
+                padding: 0 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .section-title {
+                font-size: 28px;
+            }
+
+            .pillar {
+                padding: 30px 20px;
+            }
+
+            .pillar-icon {
+                width: 60px;
+                height: 60px;
+                font-size: 24px;
+            }
+
+            .pillar-title {
+                font-size: 20px;
+            }
+
+            .impact-stats {
+                padding: 30px 20px;
+            }
+
+            .cert-badge {
+                padding: 15px 20px;
+            }
+        }
