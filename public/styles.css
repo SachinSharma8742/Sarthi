@@ -48,11 +48,11 @@ body {
   width: 40px;  /* Reduced from 48px */
   height: 40px; /* Reduced from 48px */
   border-radius: 10px; /* Reduced from 12px */
-  background: linear-gradient(135deg, #A78BFA, #60A5FA);
+  background: linear-gradient(135deg, #4ade80, #16a34a);
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 12px rgba(167, 139, 250, 0.3);
+  box-shadow: 0 4px 12px rgba(74, 222, 128, 0.3);
 }
 
 .logo-icon i {
@@ -63,7 +63,7 @@ body {
 .logo-text h1 {
   font-size: 20px; /* Reduced from 24px */
   font-weight: 700;
-  background: linear-gradient(135deg, #A78BFA, #60A5FA);
+  background: linear-gradient(135deg, #4ade80, #16a34a);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -76,7 +76,7 @@ body {
 
 .contact-btn {
   padding: 8px 16px; /* Reduced from 10px 20px */
-  border: 1px solid #C7D2FE;
+  border: 1px solid #86efac;
   background: transparent;
   color: #4B5563;
   border-radius: 8px;
@@ -86,7 +86,7 @@ body {
 }
 
 .contact-btn:hover {
-  background: #C7D2FE;
+  background: #86efac;
   color: #1F2937;
 }
 
@@ -99,7 +99,7 @@ body {
 .badge {
   display: inline-block;
   padding: 8px 20px;
-  background: linear-gradient(135deg, #C7D2FE, #FDE68A);
+  background: linear-gradient(135deg, #86efac, #4ade80);
   border-radius: 50px;
   font-size: 14px;
   font-weight: 600;
@@ -116,7 +116,7 @@ body {
 }
 
 .gradient-text {
-  background: linear-gradient(135deg, #A78BFA, #60A5FA);
+  background: linear-gradient(135deg, #4ade80, #16a34a);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -153,24 +153,24 @@ body {
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, #A78BFA, #60A5FA);
+  background: linear-gradient(135deg, #4ade80, #16a34a);
   color: white;
-  box-shadow: 0 4px 12px rgba(167, 139, 250, 0.4);
+  box-shadow: 0 4px 12px rgba(74, 222, 128, 0.4);
 }
 
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(167, 139, 250, 0.5);
+  box-shadow: 0 8px 20px rgba(74, 222, 128, 0.5);
 }
 
 .btn-outline {
   background: transparent;
-  border: 2px solid #A78BFA;
+  border: 2px solid #4ade80;
   color: #1F2937;
 }
 
 .btn-outline:hover {
-  background: linear-gradient(135deg, #A78BFA, #60A5FA);
+  background: linear-gradient(135deg, #4ade80, #16a34a);
   color: white;
   transform: translateY(-2px);
 }
@@ -227,27 +227,27 @@ body {
 }
 
 .gradient-purple {
-  background: linear-gradient(135deg, #A78BFA, #8B5CF6);
+  background: linear-gradient(135deg, #4ade80, #16a34a);
 }
 
 .gradient-blue {
-  background: linear-gradient(135deg, #60A5FA, #3B82F6);
+  background: linear-gradient(135deg, #86efac, #15803d);
 }
 
 .gradient-yellow {
-  background: linear-gradient(135deg, #FDE68A, #FBBF24);
+  background: linear-gradient(135deg, #bbf7d0, #22c55e);
 }
 
 .gradient-cyan {
-  background: linear-gradient(135deg, #67E8F9, #06B6D4);
+  background: linear-gradient(135deg, #a7f3d0, #059669);
 }
 
 .gradient-pink {
-  background: linear-gradient(135deg, #F9A8D4, #EC4899);
+  background: linear-gradient(135deg, #86efac, #15803d);
 }
 
 .gradient-orange {
-  background: linear-gradient(135deg, #FDBA74, #F97316);
+  background: linear-gradient(135deg, #bbf7d0, #16a34a);
 }
 
 .about, .features, .workflow, .tech-stack, .impact, .feasibility, .research, .team, .cta {
@@ -306,7 +306,7 @@ body {
 }
 
 .check-item i {
-  color: #60A5FA;
+  color: #16a34a;
   font-size: 20px;
   flex-shrink: 0;
 }
@@ -426,7 +426,7 @@ body {
   width: 64px;
   height: 64px;
   border-radius: 12px;
-  background: linear-gradient(135deg, #A78BFA, #60A5FA);
+  background: linear-gradient(135deg, #4ade80, #16a34a);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -487,7 +487,7 @@ body {
   width: 48px;
   height: 48px;
   border-radius: 12px;
-  background: linear-gradient(135deg, #C7D2FE, #A78BFA);
+  background: linear-gradient(135deg, #bbf7d0, #4ade80);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -559,7 +559,7 @@ body {
 .impact-value {
   font-size: 40px;
   font-weight: 800;
-  background: linear-gradient(135deg, #A78BFA, #60A5FA);
+  background: linear-gradient(135deg, #4ade80, #16a34a);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -602,9 +602,9 @@ body {
 }
 
 .tab-btn.active {
-  background: linear-gradient(135deg, #A78BFA, #60A5FA);
+  background: linear-gradient(135deg, #4ade80, #16a34a);
   color: white;
-  box-shadow: 0 4px 12px rgba(167, 139, 250, 0.3);
+  box-shadow: 0 4px 12px rgba(74, 222, 128, 0.3);
 }
 
 .tab-btn:hover:not(.active) {
@@ -671,7 +671,7 @@ body {
   width: 48px;
   height: 48px;
   border-radius: 12px;
-  background: linear-gradient(135deg, #C7D2FE, #A78BFA);
+  background: linear-gradient(135deg, #bbf7d0, #4ade80);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -696,7 +696,7 @@ body {
 
 .research-source {
   font-size: 14px;
-  color: #60A5FA;
+  color: #16a34a;
   margin-bottom: 8px;
 }
 
@@ -751,12 +751,12 @@ body {
   width: 64px;
   height: 64px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #A78BFA, #60A5FA);
+  background: linear-gradient(135deg, #4ade80, #16a34a);
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  box-shadow: 0 4px 12px rgba(167, 139, 250, 0.3);
+  box-shadow: 0 4px 12px rgba(74, 222, 128, 0.3);
   transition: transform 0.3s ease;
 }
 
@@ -806,12 +806,12 @@ body {
   width: 80px;
   height: 80px;
   border-radius: 20px;
-  background: linear-gradient(135deg, #A78BFA, #60A5FA);
+  background: linear-gradient(135deg, #4ade80, #16a34a);
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  box-shadow: 0 4px 12px rgba(167, 139, 250, 0.3);
+  box-shadow: 0 4px 12px rgba(74, 222, 128, 0.3);
   transition: transform 0.3s ease;
 }
 
@@ -832,7 +832,7 @@ body {
   font-size: 24px;
   font-weight: 700;
   margin-bottom: 4px;
-  background: linear-gradient(135deg, #A78BFA, #60A5FA);
+  background: linear-gradient(135deg, #4ade80, #16a34a);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -934,7 +934,7 @@ body {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #A78BFA, #60A5FA);
+  background: linear-gradient(135deg, #4ade80, #16a34a);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -946,7 +946,7 @@ body {
 
 .footer-icon:hover {
   transform: translateY(-3px) scale(1.1);
-  box-shadow: 0 4px 12px rgba(167, 139, 250, 0.3);
+  box-shadow: 0 4px 12px rgba(74, 222, 128, 0.3);
 }
 
 /* Wave Divider Styles - Update */
@@ -978,7 +978,7 @@ body {
 
 .wave-divider-bottom svg path,
 .wave-divider-top svg path {
-  fill: rgba(96, 165, 250, 0.1);
+  fill: rgba(74, 222, 128, 0.1);
   animation: wave 8s linear infinite;
   transform-origin: center;
 }
