@@ -81,8 +81,7 @@ export default function MapView({
     // Initialize the map only once
     if (!__mapSingleton.map) {
       console.log("[v0] Bootstrapping persistent Mapbox instance (one-time init)")
-      mapboxgl.accessToken =
-        "pk.eyJ1Ijoic2FjaGlueWVzIiwiYSI6ImNtZzNianI2bTE3M3kya3IwY3p3MWxndmsifQ.d8j3cJfhyOZlAzHJSZb1Uw"
+      mapboxgl.accessToken = process.env.NEXT_PUBLIC_MAPBOX_TOKEN || ""
 
       __mapSingleton.map = new mapboxgl.Map({
         container: __mapSingleton.container!,
@@ -228,9 +227,8 @@ export default function MapView({
                       <span class="text-xs font-medium">Risk Level:</span>
                       <span class="text-xs px-2 py-1 bg-red-100 text-red-700 rounded">${zone?.riskLevel}</span>
                     </div>
-                    ${
-                      zone?.hazards
-                        ? `
+                    ${zone?.hazards
+                  ? `
                       <div class="mb-2">
                         <span class="text-xs font-medium">Hazards:</span>
                         <ul class="text-xs text-gray-600 mt-1">
@@ -238,8 +236,8 @@ export default function MapView({
                         </ul>
                       </div>
                     `
-                        : ""
-                    }
+                  : ""
+                }
                     <p class="text-xs text-red-600 font-medium">⚠️ Unsafe Zone - Exercise caution</p>
                   </div>
                 `
@@ -380,11 +378,10 @@ export default function MapView({
           .setHTML(`
             <div class="p-3">
               <h3 class="font-bold text-sm mb-1">Your Location</h3>
-              <p class="text-xs text-gray-600">${
-                coordinates && (coordinates.lat !== 26.9124 || coordinates.lng !== 75.7873)
-                  ? "Current GPS Location"
-                  : "Jaipur, Rajasthan, India (Fallback)"
-              }</p>
+              <p class="text-xs text-gray-600">${coordinates && (coordinates.lat !== 26.9124 || coordinates.lng !== 75.7873)
+              ? "Current GPS Location"
+              : "Jaipur, Rajasthan, India (Fallback)"
+            }</p>
               <p class="text-xs text-gray-500 mt-1">${coordinates?.lat.toFixed(4) || "26.9124"}°N, ${coordinates?.lng.toFixed(4) || "75.7873"}°E</p>
               ${tourist?.sos ? '<p class="text-xs text-red-600 font-medium mt-2">🚨 SOS ACTIVE</p>' : ""}
             </div>

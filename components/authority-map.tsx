@@ -37,8 +37,7 @@ export default function AuthorityMap({ tourists, selectedTourist, onTouristClick
           return
         }
 
-        mapboxgl.accessToken =
-          "pk.eyJ1Ijoic2FjaGlueWVzIiwiYSI6ImNtZzNianI2bTE3M3kya3IwY3p3MWxndmsifQ.d8j3cJfhyOZlAzHJSZb1Uw"
+        mapboxgl.accessToken = process.env.NEXT_PUBLIC_MAPBOX_TOKEN || ""
 
         map.current = new mapboxgl.Map({
           container: mapContainer.current,
@@ -206,10 +205,9 @@ export default function AuthorityMap({ tourists, selectedTourist, onTouristClick
             border: 2px solid white;
             cursor: pointer;
             background-color: ${tourist.sos ? "#ef4444" : "#3b82f6"};
-            box-shadow: ${
-              tourist.sos
-                ? "0 0 15px rgba(239, 68, 68, 0.6), 0 0 30px rgba(239, 68, 68, 0.3)"
-                : "0 2px 8px rgba(59, 130, 246, 0.3)"
+            box-shadow: ${tourist.sos
+              ? "0 0 15px rgba(239, 68, 68, 0.6), 0 0 30px rgba(239, 68, 68, 0.3)"
+              : "0 2px 8px rgba(59, 130, 246, 0.3)"
             };
             transition: background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             transform-origin: center;

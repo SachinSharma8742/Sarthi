@@ -1,7 +1,10 @@
 import { MongoClient, type Db } from "mongodb"
 
-const uri =
-  "mongodb://sachin23bcon1246_db_user:sy5iZ78R80Q18Nso@ac-klkrwdi-shard-00-00.phv1njc.mongodb.net:27017,ac-klkrwdi-shard-00-01.phv1njc.mongodb.net:27017,ac-klkrwdi-shard-00-02.phv1njc.mongodb.net:27017/tourist_tracker?ssl=true&replicaSet=atlas-iy1ox0-shard-0&authSource=admin&retryWrites=true&w=majority"
+if (!process.env.MONGODB_URI) {
+  throw new Error('Invalid/Missing environment variable: "MONGODB_URI"')
+}
+
+const uri = process.env.MONGODB_URI
 
 const options = {
   tls: true,

@@ -177,8 +177,7 @@ export default function EnhancedAuthorityMap({
           return
         }
 
-        mapboxgl.accessToken =
-          "pk.eyJ1Ijoic2FjaGlueWVzIiwiYSI6ImNtZzNianI2bTE3M3kya3IwY3p3MWxndmsifQ.d8j3cJfhyOZlAzHJSZb1Uw"
+        mapboxgl.accessToken = process.env.NEXT_PUBLIC_MAPBOX_TOKEN || ""
 
         map.current = new mapboxgl.Map({
           container: mapContainer.current,
@@ -329,20 +328,18 @@ export default function EnhancedAuthorityMap({
           : ""
 
         const zoneBadge = tourist.currentZoneType
-          ? `<div class="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium ${
-              tourist.currentZoneType === "red"
-                ? "bg-red-100 text-red-800 border border-red-200"
-                : tourist.currentZoneType === "yellow"
-                  ? "bg-yellow-100 text-yellow-800 border border-yellow-200"
-                  : "bg-green-100 text-green-800 border border-green-200"
-            } mb-2">
-              <span class="w-2 h-2 ${
-                tourist.currentZoneType === "red"
-                  ? "bg-red-500"
-                  : tourist.currentZoneType === "yellow"
-                    ? "bg-yellow-500"
-                    : "bg-green-500"
-              } rounded-full mr-1"></span>
+          ? `<div class="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium ${tourist.currentZoneType === "red"
+            ? "bg-red-100 text-red-800 border border-red-200"
+            : tourist.currentZoneType === "yellow"
+              ? "bg-yellow-100 text-yellow-800 border border-yellow-200"
+              : "bg-green-100 text-green-800 border border-green-200"
+          } mb-2">
+              <span class="w-2 h-2 ${tourist.currentZoneType === "red"
+            ? "bg-red-500"
+            : tourist.currentZoneType === "yellow"
+              ? "bg-yellow-500"
+              : "bg-green-500"
+          } rounded-full mr-1"></span>
               ${tourist.currentZoneName} (${tourist.currentZoneType.toUpperCase()})
             </div>`
           : ""
@@ -406,20 +403,18 @@ export default function EnhancedAuthorityMap({
             : ""
 
           const zoneBadge = tourist.currentZoneType
-            ? `<div class="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium ${
-                tourist.currentZoneType === "red"
-                  ? "bg-red-100 text-red-800 border border-red-200"
-                  : tourist.currentZoneType === "yellow"
-                    ? "bg-yellow-100 text-yellow-800 border border-yellow-200"
-                    : "bg-green-100 text-green-800 border border-green-200"
-              } mb-2">
-                <span class="w-2 h-2 ${
-                  tourist.currentZoneType === "red"
-                    ? "bg-red-500"
-                    : tourist.currentZoneType === "yellow"
-                      ? "bg-yellow-500"
-                      : "bg-green-500"
-                } rounded-full mr-1"></span>
+            ? `<div class="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium ${tourist.currentZoneType === "red"
+              ? "bg-red-100 text-red-800 border border-red-200"
+              : tourist.currentZoneType === "yellow"
+                ? "bg-yellow-100 text-yellow-800 border border-yellow-200"
+                : "bg-green-100 text-green-800 border border-green-200"
+            } mb-2">
+                <span class="w-2 h-2 ${tourist.currentZoneType === "red"
+              ? "bg-red-500"
+              : tourist.currentZoneType === "yellow"
+                ? "bg-yellow-500"
+                : "bg-green-500"
+            } rounded-full mr-1"></span>
                 ${tourist.currentZoneName} (${tourist.currentZoneType.toUpperCase()})
               </div>`
             : ""

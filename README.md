@@ -1,110 +1,124 @@
-# Tourist Tracker - Globe Explorer
+# 🇮🇳 Saarthi (सारथी)
+### *Your Digital Guardian for Safe & Smart Tourism*
 
-A full-stack tourist tracking and emergency response system with an interactive 3D globe interface.
+[![Next.js](https://img.shields.io/badge/Next.js-14-black)](https://nextjs.org/) [![React](https://img.shields.io/badge/React-19-blue)](https://react.dev/) [![Tailwind CSS](https://img.shields.io/badge/Tailwind-CSS-38B2AC)](https://tailwindcss.com/) [![Mapbox](https://img.shields.io/badge/Mapbox-Maps-blueviolet)](https://www.mapbox.com/)
 
-## Features
+---
 
-### Tourist Features
-- **User Registration & Authentication**: Secure signup/signin with JWT tokens
-- **Interactive Globe**: 3D globe interface for location exploration
-- **Real-time Location Tracking**: Automatic GPS location updates
-- **SOS Emergency System**: One-click emergency alert system
-- **Proof Verification**: Support for Aadhaar and Passport verification
+## 🌟 Overview
 
-### Authority Features
-- **Dashboard Access**: Direct access to authority dashboard (no login required for prototype)
-- **Real-time Monitoring**: Live tracking of all registered tourists
-- **Interactive Map**: Mapbox integration showing tourist locations
-- **Emergency Alerts**: Visual highlighting of SOS alerts
-- **Tourist Management**: Complete tourist information and status tracking
+**Saarthi** is a cutting-edge Tourist Monitoring and Emergency Response System designed to revolutionize travel safety in India. By bridging the gap between tourists and local authorities, Saarthi provides a seamless safety net using real-time geolocation, geofencing, and instant SOS protocols.
 
-## Technology Stack
+The platform serves two distinct user groups:
+1.  **Tourists**: Empowering travelers with a 3D interactive guide, safety alerts, and a one-tap SOS lifeline.
+2.  **Authorities**: Equipping law enforcement and tourism boards with a command-center dashboard for live monitoring and rapid incident response.
 
-- **Frontend**: Next.js 14, React 19, TypeScript
-- **Backend**: Next.js API Routes, MongoDB Atlas
-- **Authentication**: JWT tokens, bcryptjs password hashing
-- **Maps**: Mapbox GL JS, Globe.gl for 3D globe
-- **UI**: Tailwind CSS, Radix UI components
-- **Database**: MongoDB with tourist collection
+---
 
-## Environment Variables
+## 📱 Mobile Applications (Prototypes)
 
-Create a `.env.local` file with the following variables:
+We have included two Android package (APK) files in the `mobile-app/` directory for testing and demonstration purposes:
 
-\`\`\`env
-MONGODB_URI=your_mongodb_atlas_connection_string
-JWT_SECRET=your_secure_jwt_secret_key
-\`\`\`
+| APK File | Description | Path |
+|----------|-------------|------|
+| **Saarthi.apk** | **Core Working Prototype**: The functional base of the application with working backend integration for location tracking and SOS. | [`mobile-app/Saarthi.apk`](./mobile-app/Saarthi.apk) |
+| **app-release.apk** | **Frontend Experience Demo**: A polished UI prototype showcasing the intended design aesthetics and user flow. | [`mobile-app/app-release.apk`](./mobile-app/app-release.apk) |
 
-## Database Schema
+> *Note: These are prototype builds. Ensure you allow installation from unknown sources on your Android device to test them.*
 
-### Tourists Collection
-\`\`\`javascript
-{
-  "_id": "ObjectId",
-  "name": "string",
-  "email": "string (unique)",
-  "proofType": "string (Aadhaar or Passport)",
-  "proofNumber": "string",
-  "password": "string (hashed)",
-  "createdAt": "Date",
-  "lat": "number (nullable)",
-  "lng": "number (nullable)",
-  "timestamp": "Date (nullable)",
-  "sos": "boolean (default false)"
-}
-\`\`\`
+---
 
-## API Endpoints
+## 🚀 Key Features
 
-- `POST /api/auth/signup` - Tourist registration
-- `POST /api/auth/signin` - Tourist login
-- `GET /api/auth/verify` - Token verification
-- `POST /api/location` - Update tourist location
-- `POST /api/sos` - Toggle SOS status
-- `GET /api/tourists` - Get all tourists (for authority dashboard)
+### 🎒 For Tourists
+*   **🌍 Interactive 3D Globe**: Explore destinations with an immersive, high-fidelity 3D globe interface.
+*   **📍 Real-Time Tracking**: Secure, opt-in location sharing ensures authorities can assist you whenever needed.
+*   **🚨 One-Tap SOS**: Instantly broadcast a distress signal to the nearest authorities with your precise location.
+*   **🛡️ Zone Alerts**: Receive immediate notifications when entering high-risk or restricted zones (Geofencing).
+*   **🆔 Identity Verification**: Seamless integration with Aadhaar and Passport for verified travel profiles.
 
-## Routes
+### 👮‍♂️ For Authorities
+*   **🖥️ Command Dashboard**: A centralized view of all active tourists in your jurisdiction.
+*   **🗺️ Live Heatmaps**: Visualize tourist density and movement patterns on an interactive Mapbox map.
+*   **⚠️ Incident Management**: Instant visual and audio alerts for SOS signals, categorized by severity.
+*   **🏗️ Zone Management**: Draw and manage safety zones (Red/Yellow/Green) directly on the map to automate alerts.
+*   **📊 Analytics**: Track detailed tourist statuses and historical data for safety audits.
 
-- `/` - Main globe interface (requires authentication)
-- `/dashboard` - Authority dashboard (no authentication required)
+---
 
-## Getting Started
+## 🛠️ Technology Stack
 
-1. Install dependencies:
-\`\`\`bash
+*   **Frontend**: [Next.js 14](https://nextjs.org/) (App Router), React 19, TypeScript
+*   **Styling**: Tailwind CSS, Shadcn/UI, Radix UI
+*   **Maps & 3D**: Mapbox GL JS, Globe.gl, Three.js
+*   **Backend**: Next.js API Routes (Serverless)
+*   **Database**: MongoDB Atlas (Mongoose ODM)
+*   **Authentication**: Custom JWT-based Auth with bcrypt encryption
+
+---
+
+## 🏗️ Getting Started
+
+Follow these steps to set up the project locally:
+
+### 1. Clone the Repository
+```bash
+git clone https://github.com/your-username/saarthi.git
+cd saarthi
+```
+
+### 2. Install Dependencies
+```bash
 npm install
-\`\`\`
+# or
+pnpm install
+```
 
-2. Set up environment variables in `.env.local`
+### 3. Configure Environment
+Create a `.env.local` file in the root directory with the following variables:
+```env
+MONGODB_URI=your_mongodb_connection_string
+JWT_SECRET=your_secure_secret_key
+```
 
-3. Run the development server:
-\`\`\`bash
+### 4. Run Development Server
+```bash
 npm run dev
-\`\`\`
+```
 
-4. Open [http://localhost:3000](http://localhost:3000) to view the application
+Open [http://localhost:3000](http://localhost:3000) to view the application.
 
-## Usage
+*   **Tourist View**: Navigate to `/` (Requires login)
+*   **Authority Dashboard**: Navigate to `/dashboard` (Open access for prototype)
 
-### For Tourists
-1. Register with name, email, proof type, and proof number
-2. Login to access the interactive globe
-3. Allow location permissions for tracking
-4. Use SOS button in emergency situations
-5. Explore locations by clicking on the globe
+---
 
-### For Authorities
-1. Access `/dashboard` directly (no login required)
-2. Monitor all registered tourists in real-time
-3. View tourist locations on the interactive map
-4. Respond to SOS alerts highlighted in red
-5. Access complete tourist information and status
+## 📂 Project Structure
 
-## Security Features
+```bash
+├── app/                  # Next.js App Router pages and API routes
+├── components/           # Reusable UI components (Shadcn + Custom)
+├── contexts/             # React Contexts (Auth, etc.)
+├── lib/                  # Utilities, Database models, Helper functions
+├── mobile-app/           # Android APK builds
+├── public/               # Static assets
+└── styles/               # Global styles and Tailwind config
+```
 
-- Password hashing with bcryptjs
-- JWT token-based authentication
-- Input validation and sanitization
-- Secure API endpoints with authentication middleware
-- Environment variable protection for sensitive data
+---
+
+## 🔒 Security & Privacy
+
+*   **Data Encryption**: All sensitive user data is hashed and encrypted.
+*   **Privacy First**: Location tracking is active only when permitted by the user.
+*   **Secure API**: Middleware ensures only authorized requests access sensitive endpoints.
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+---
+
+*Built with ❤️ for a Safer India.*
